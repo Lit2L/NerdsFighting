@@ -2,7 +2,7 @@ import AnimatedShinyText from '@/components/lit2l/animated-shiny-text'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
-export async function AnimatedJoinButton() {
+export function AnimatedJoinButton() {
   return (
     <div className='z-10 flex items-center justify-center'>
       <Link

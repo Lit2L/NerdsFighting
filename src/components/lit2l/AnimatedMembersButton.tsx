@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { CalendarHeart, Pencil } from 'lucide-react'
 import Link from 'next/link'
 
-export async function AnimatedMembersButton() {
+export function AnimatedMembersButton() {
   return (
     <div className='z-10 flex items-center justify-center'>
       <Link

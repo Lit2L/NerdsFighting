@@ -127,7 +127,7 @@ const Schedule: React.FC = () => {
               </Card>
             ))}
         </div>
-        <Card className='my-12'>
+        <Card className='m-6'>
           <CardContent className='p-6'>
             <h3 className='font-heading text-2xl'>Location: Williams MMA</h3>
             <Separator className='my-3' />

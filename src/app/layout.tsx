@@ -1,9 +1,10 @@
 import { Inter as FontSans, Krona_One } from 'next/font/google'
 import localFont from 'next/font/local'
-import megrim from 'next/font/local'
 import '../styles/globals.css'
+import Hydrate from '@/components/Hydrate'
 import { Analytics } from '@/components/analytics'
-import SmoothScrolling from '@/components/lit2l/SmoothScrolling'
+import { MobileNav } from '@/components/mobile-navigation'
+import { Navigation } from '@/components/navigation'
 import { TailwindIndicator } from '@/components/tailwind-indicator'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
@@ -82,26 +83,23 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
-      <head />
-      <body
-        className={cn(
-          'max-w-screen min-h-screen overflow-x-hidden bg-background/60 font-sans antialiased ',
-          fontSans.variable,
-          fontHeading.variable,
-          kronaOne.variable,
-          logoFont.variable
-        )}
-      >
+    <html
+      lang='en'
+      className={cn(fontSans.variable, fontHeading.variable, kronaOne.variable, logoFont.variable)}
+    >
+      <Hydrate>
         <TRPCReactProvider cookies={cookies().toString()}>
           <ThemeProvider attribute='class' defaultTheme='dark' enableSystem>
-            <SmoothScrolling>{children}</SmoothScrolling>
+            <Navigation />
+            <MobileNav />
+            <div className=''>{children}</div>
+
             <Analytics />
             <Toaster />
             <TailwindIndicator />
           </ThemeProvider>
         </TRPCReactProvider>
-      </body>
+      </Hydrate>
     </html>
   )
 }
