@@ -63,7 +63,7 @@ const classes = [
 const Schedule: React.FC = () => {
   return (
     <section
-      id='schedule'
+      id='classes'
       className=' relative min-h-full w-full py-36 dark:bg-[radial-gradient(circle_400px_at_50%_350px,#144437,transparent)]'
     >
       <div className='mx-auto flex flex-col items-center justify-center sm:container'>

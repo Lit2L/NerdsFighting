@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
 
 @layer base {
   :root {
@@ -90,6 +91,28 @@
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+  }
+}
+
+@layer components {
+  .smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .nav-link {
+    @apply relative font-kronaOne text-xs text-white hover:text-gray-300/60 dark:text-white dark:hover:text-gray-300;
+  }
+  .mobile-nav-link {
+    @apply relative text-2xl font-bold text-gray-400 hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-100;
+  }
+  .nav-link::before,
+  .mobile-nav-link::before {
+    content: '';
+    @apply absolute -bottom-0.5 left-0 h-[1px] w-full origin-right scale-x-0 bg-gray-200 transition-transform duration-300 ease-in-out dark:bg-white;
+  }
+  .nav-link:hover::before,
+  .mobile-nav-link:hover::before,
+  .active-nav-link::before {
+    @apply origin-left scale-x-100;
   }
 }
 

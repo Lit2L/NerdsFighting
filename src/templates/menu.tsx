@@ -6,32 +6,28 @@ export const Menu = () => {
   const menulist = [
     {
       id: 1,
-      type: 'monthly',
       name: 'Membership',
       price: '$125 per month',
-      description: 'Unlimited classes',
-      link: '/service1'
+      description: 'Unlimited classes'
     },
     {
-      type: 'single',
+      id: 2,
       name: 'Private Sessions',
       price: '$100 per session',
-      description: '1 hr private sessions',
-      link: '/service2'
+      description: '1 hr private sessions'
     },
 
     {
-      type: 'monthly package',
+      id: 3,
       name: 'Private One-On-One Sessions (monthly 4 pack)',
       description: '1 hr private sessions per week',
-      price: '$350',
-      link: '/service4'
+      price: '$350'
     },
     {
-      type: 'single',
+      id: 4,
       name: 'Private Group Session',
-      price: '$125 per session',
-      link: '/service3'
+      description: '1 hr group session',
+      price: '$125 per session'
     }
   ]
   return (
@@ -45,20 +41,36 @@ export const Menu = () => {
         </div>
         <div className='mt-12 rounded-lg border bg-background p-6 md:p-10'>
           <div className='aspect-[4/3] rounded-lg'>
-            {menulist.map((item, index) => (
-              <>
-                <div key={item.id} className='flex justify-between border-b py-12'>
-                  <div className='flex w-1/3 flex-col gap-3'>
-                    <h3 className='md:text-md text-sm font-semibold'>{item.name}</h3>
-                    <p className='text-xs sm:text-sm '>{item.description}</p>
-                  </div>
-                  <p className='md:text-md w-1/3 text-end text-sm'>{item.price}</p>
-                  {/* <Link href={item.link} className='w-1/3 text-end text-lg'>
-                    Book now
-                  </Link> */}
-                </div>
-              </>
-            ))}
+            <div className='flex justify-between border-b py-12'>
+              <div className='flex w-1/3 flex-col gap-3'>
+                <h3 className='md:text-md text-sm font-semibold'>Membership</h3>
+                <p className='text-xs sm:text-sm '>Unlimited Classes</p>
+              </div>
+              <p className='md:text-md w-1/3 text-end text-sm'>$125 per month</p>
+            </div>
+            <div className='flex justify-between border-b py-12'>
+              <div className='flex w-1/3 flex-col gap-3'>
+                <h3 className='md:text-md text-sm font-semibold'>Private Sessions</h3>
+                <p className='text-xs sm:text-sm '>1 hr private sessions</p>
+              </div>
+              <p className='md:text-md w-1/3 text-end text-sm'>$100 per session</p>
+            </div>
+            <div className='flex justify-between border-b py-12'>
+              <div className='flex w-1/3 flex-col gap-3'>
+                <h3 className='md:text-md text-sm font-semibold'>
+                  Private One-On-One Sessions (monthly 4 pack)
+                </h3>
+                <p className='text-xs sm:text-sm '>1 hr private sessions per week</p>
+              </div>
+              <p className='md:text-md w-1/3 text-end text-sm'>$350</p>
+            </div>
+            <div className='flex justify-between border-b py-12'>
+              <div className='flex w-1/3 flex-col gap-3'>
+                <h3 className='md:text-md text-sm font-semibold'>Private Group Session</h3>
+                <p className='text-xs sm:text-sm '>1 hr group sessions</p>
+              </div>
+              <p className='md:text-md w-1/3 text-end text-sm'>$125 per session</p>
+            </div>
           </div>
         </div>
       </div>
